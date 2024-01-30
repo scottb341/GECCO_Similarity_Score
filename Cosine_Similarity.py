@@ -1,6 +1,5 @@
 import os
 import torch
-os.environ['TRANSFORMERS_CACHE'] = 'D:\Models'
 from transformers import RobertaTokenizer, RobertaModel
 
 
