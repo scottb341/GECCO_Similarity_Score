@@ -23,22 +23,15 @@ class SimilarityScore:
     def embed(self, text):
         tokenizer = self.tokenizer
         tokens = self.get_tokens(text)
-        
         token_indices = tokenizer.convert_tokens_to_ids(tokens)
-        
         segments_ids = [1] * len(tokens)
-    
         tokens_tensor = torch.tensor([token_indices])
         segments_tensors = torch.tensor([segments_ids])
-    
         with torch.no_grad():
             outputs = self.model(tokens_tensor, segments_tensors)
             hidden_states = outputs[2]
-            
         token_vecs = hidden_states[-2][0]
-
         sentence_embedding = torch.mean(token_vecs, dim=0)
-        
         return sentence_embedding
         
     def similarity(self, text1,text2):
