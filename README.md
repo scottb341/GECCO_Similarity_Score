@@ -1,5 +1,8 @@
 # GECCO_Similarity_Score
 
+## Description 
+Given two code-snippets (texts), it computes the semantic similarity between the 2 texts using the cosine of the vector embeddings.
+
 ## Installation 
 
 ```pip install transformers```
