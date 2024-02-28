@@ -1,11 +1,11 @@
 # GECCO_Similarity_Score
 
-##Installation 
+## Installation 
 
 ```pip install transformers```
 ```pip install torch```
 
-##Example Use Case
+## Example Use Case
 ```python
 s = SimilarityScore(CODE_BERT_MODEL) # CODE_BERT_MODEL = "microsoft/codebert-base"
 print(s.similarity("x=10", "y=10")
