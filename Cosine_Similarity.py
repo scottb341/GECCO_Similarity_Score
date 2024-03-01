@@ -33,9 +33,7 @@ class SimilarityScore:
         token_vecs = hidden_states[-2][0]
         sentence_embedding = torch.mean(token_vecs, dim=0)
         return sentence_embedding
-        
-    def similarity(self, text1,text2):
-        vec1 = self.embed(text1)
-        vec2 = self.embed(text2)
+    
+    def similarity(self, vec1,vec2):
         return self.cosine(vec1,vec2)
 
