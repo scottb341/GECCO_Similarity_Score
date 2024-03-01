@@ -11,6 +11,8 @@ Given two code-snippets (texts), it computes the semantic similarity between the
 ## Example Use Case
 ```python
 s = SimilarityScore(CODE_BERT_MODEL) # CODE_BERT_MODEL = "microsoft/codebert-base"
-print(s.similarity("x=10", "y=10")
+v1 = s.embed("x=10")
+v2 = s.embed("y=10")
+print(s.similarity(v1,v2))
 ```
 This should print ```tensor(0.9967)```
