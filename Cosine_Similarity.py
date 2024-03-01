@@ -10,7 +10,7 @@ class SimilarityScore:
         self.model = RobertaModel.from_pretrained(model_name,output_hidden_states=True)
         self.model.eval()
 
-    def cosine(self, v1,v2): 
+    def similarity(self, v1,v2): 
         mag1 = torch.norm(v1)
         mag2 = torch.norm(v2)
         return torch.dot(v1, v2)/(mag1*mag2)
@@ -33,7 +33,4 @@ class SimilarityScore:
         token_vecs = hidden_states[-2][0]
         sentence_embedding = torch.mean(token_vecs, dim=0)
         return sentence_embedding
-    
-    def similarity(self, vec1,vec2):
-        return self.cosine(vec1,vec2)
 
